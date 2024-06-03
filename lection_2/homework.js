@@ -66,3 +66,23 @@ function multiply(arg){
 //     Текст ошибки: "В getUniqArray был передан невалидный параметр. Аргумент arr
 // должен быть массивом чисел".
 
+const arr1 = [1,2,3,4,3,4]
+const arr2 = [1, 'a', 2, 3, 's', 4, 5]
+const arr3 = 'str'
+const arr4 = []
+const arr5 = [null, null, null]
+const arr6 = [undefined, undefined]
+
+function getUniqArray(arr) {
+    if(!Array.isArray(arr) || arr.length === 0 || !arr.every(value => typeof value === 'number' && !isNaN(value))){
+        throw new Error("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
+    }
+    return Array.from(new Set(arr))
+}
+
+// console.log(getUniqArray(arr1))
+// console.log(getUniqArray(arr2))
+// console.log(getUniqArray(arr3))
+// console.log(getUniqArray(arr4))
+// console.log(getUniqArray(arr5))
+// console.log(getUniqArray(arr6))
