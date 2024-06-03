@@ -1,16 +1,16 @@
 //Как исправить "одни пятёрки"?
 
-// var result = [];
-// for (var i = 0; i < 5; i++) {
-//     result[i] = function () {
-//         console.log(i);
-//     };
-// }
-// result[0](); //5
-// result[1](); //5
-// result[2](); //5
-// result[3](); //5
-// result[4](); //5
+let result = [];
+for (let i = 0; i < 5; i++) {
+    result[i] = function () {
+        console.log(i);
+    };
+}
+result[0](); //5
+result[1](); //5
+result[2](); //5
+result[3](); //5
+result[4](); //5
 
 //////////////////////////////////////////////////
 
