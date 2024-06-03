@@ -14,23 +14,25 @@ result[4](); //5
 
 //////////////////////////////////////////////////
 
-// function getGroup() {
-//     let students = [];
-//     let i = 0;
-//     while (i < 10) {
-//         students[i] = function() {
-//             console.log(i);
-//         }
-//         i++
-//     }
-//
-//     return students;
-// }
-//
-// let group = getGroup();
-//
-// group[0](); // 10 как исправить на 0
-// group[5](); // 10                  5
+function getGroup() {
+    let students = [];
+    let i = 0;
+    while (i < 10) {
+        students[i] = (function(j) {
+            return function (){
+                console.log(j);
+            }
+        })(i)
+        i++
+    }
+
+    return students;
+}
+
+let group = getGroup();
+
+group[0](); // 10 как исправить на 0
+group[5](); // 10                  5
 
 //////////////////////////////////////////////////
 
