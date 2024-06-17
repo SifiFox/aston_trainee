@@ -82,48 +82,23 @@ const obj = {}
 ///////// Функция конструктор /////////////
 ///////// через call /////////
 ///////////////////////////////////////////
-// function Animal(name){
-//     this.name = name
-//     this.speak = function(){
-//         console.log('Some generic speak!')
-//     }
-// }
-//
-// function Bird(name){
-//     Animal.call(this, name)
-//     this.fly = function () {
-//         console.log('Flying high')
-//     }
-// }
-//
-// const animal = new Animal("Дженни")
-// const bird = new Bird("Воробей")
-//
-// animal.speak()
-// bird.speak()
-// bird.fly()
+function Animal(name){
+    this.name = name
+    this.speak = function(){
+        console.log('Some generic speak!')
+    }
+}
+function Bird(name){
+    Animal.call(this, name)
+    this.fly = function () {
+        console.log('Flying high')
+    }
+}
+Bird.prototype.constructor = Bird
 
+const animal = new Animal("Дженни")
+const bird = new Bird("Воробей")
 
-///////////////////////////////////////
-///////// Функция конструктор /////////
-///////// прототипы  //////////////////
-///////////////////////////////////////
-// function Animal(name) {
-//     this.name = name
-//     this.speak = function(){
-//         console.log('Some generic speak!')
-//     }
-// }
-// function Bird(name) {
-//     this.name = name
-//     this.fly = function(){
-//         console.log('Flying high')
-//     }
-// }
-// const animal = new Animal('Дженни')
-// Bird.prototype = animal
-// const bird = new Bird('Воробей')
-//
-// animal.speak()
-// bird.speak()
-// bird.fly()
+animal.speak()
+bird.speak()
+bird.fly()
